@@ -9,7 +9,8 @@
       <div>
         <label for="body">New message: </label>
         <input type="text" id="body" name="body" ng-model="newMessageBody">
-        <input type="submit" ng-click="createNewMessage(newMessageBody, <%= current_user.id %>)">
+        <input type="submit" ng-click="createNewMessage(newMessageBody, <%= current_user.id %>, <%= @chatroom.id %>)">
+        <!-- i can't think of a DRYer way of passing these params to the Angular controller. Let me know if you figure out a better solution! -->
       </div>
     <% else %>
       <br />

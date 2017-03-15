@@ -4,6 +4,7 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.create()
+    @chatroom = Chatroom.create(name: params[:name])
+    redirect_to "/chatrooms/#{@chatroom.id}"
   end
 end

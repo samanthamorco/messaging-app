@@ -12,6 +12,13 @@
     <% if current_user %>
       <div>Welcome, <%= current_user.name %></div>
       <a href="/logout">Log Out</a>
+      <div>
+      Create a private chatroom:
+        <%= form_tag "/chatrooms", method: :post do %>
+          <input type="text" name="name">
+          <input type="submit" value="Create Chatroom">
+        <% end %>
+      </div>
     <% else %>
       <a href="/signup">Sign Up</a>
       <a href="/login">Login</a>
