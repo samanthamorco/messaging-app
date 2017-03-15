@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
 
   resources :messages, only: [:index, :create]
+
+  namespace :api do
+    namespace :v1 do
+      resources :messages, only: [:index, :create]
+    end
+  end
 end
