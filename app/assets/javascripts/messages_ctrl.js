@@ -14,7 +14,6 @@
         user_id: currentUserId
       };
       $http.post("/api/v1/messages.json", params).then(function(response) {
-        $scope.messages.push(response.data);
         $scope.newMessageBody = "";
       });
     };

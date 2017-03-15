@@ -1,6 +1,6 @@
 <h1>Messages</h1>
 <div ng-app="app">
-  <div ng-controller="messagesCtrl" ng-init="setup()">
+  <div ng-controller="messagesCtrl" ng-init="setup()" id="messagesCtrl">
     <div class="message" ng-repeat="message in messages | orderBy:'created_at'">
       {{ message.name }}: {{ message.body }}
     </div>
