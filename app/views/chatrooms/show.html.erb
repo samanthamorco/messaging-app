@@ -8,7 +8,7 @@
     <% if current_user %>
       <div>
         <label for="body">New message: </label>
-        <input type="text" id="body" name="body" ng-model="newMessageBody">
+        <input type="text" id="body" name="body" ng-model="newMessageBody" ng-keypress="enterNewMessage($event, newMessageBody, <%= current_user.id %>, <%= @chatroom.id %>)">
         <input type="submit" ng-click="createNewMessage(newMessageBody, <%= current_user.id %>, <%= @chatroom.id %>)">
         <!-- i can't think of a DRYer way of passing these params to the Angular controller. Let me know if you figure out a better solution! -->
       </div>

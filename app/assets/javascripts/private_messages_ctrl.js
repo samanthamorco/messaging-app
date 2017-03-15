@@ -21,5 +21,14 @@
         $scope.newMessageBody = "";
       });
     };
+
+    $scope.enterNewMessage = function(e, body, currentUserId, chatroomId) {
+      var keycode = e.keyCode ? e.keyCode : e.which;
+      // this checks to see if the user has hit the enter key or not.
+      // more info here: https://css-tricks.com/snippets/javascript/javascript-keycodes/
+      if (keycode == 13) {
+        $scope.createNewMessage(body, currentUserId, chatroomId);
+      }
+    };
   });
 })();
