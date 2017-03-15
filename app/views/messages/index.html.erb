@@ -9,7 +9,7 @@
       <div>
         <label for="body">New message: </label>
         <input type="text" id="body" name="body" ng-model="newMessageBody">
-        <input type="submit" ng-click="createNewMessage(newMessageBody)">
+        <input type="submit" ng-click="createNewMessage(newMessageBody, <%= current_user.id %>)">
       </div>
     <% else %>
       <br />

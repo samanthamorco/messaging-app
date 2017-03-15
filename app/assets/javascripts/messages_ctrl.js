@@ -8,9 +8,10 @@
       });
     };
 
-    $scope.createNewMessage = function(body) {
+    $scope.createNewMessage = function(body, currentUserId) {
       var params = {
-        body: body
+        body: body,
+        user_id: currentUserId
       };
       $http.post("/api/v1/messages.json", params).then(function(response) {
         $scope.messages.push(response.data);

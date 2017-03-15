@@ -5,10 +5,9 @@ class Api::V1::MessagesController < ApplicationController
   end
 
   def create
-    binding.pry
     @message = Message.create(
       body: params[:body],
-      user_id: current_user.id
+      user_id: params[:user_id]
     )
     render "show.json.jbuilder"
   end
