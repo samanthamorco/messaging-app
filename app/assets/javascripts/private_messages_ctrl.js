@@ -12,14 +12,16 @@
     };
 
     $scope.createNewMessage = function(body, currentUserId, chatroomId) {
-      var params = {
-        body: body,
-        user_id: currentUserId,
-        chatroom_id: chatroomId
-      };
-      $http.post("/api/v1/messages.json", params).then(function(response) {
-        $scope.newMessageBody = "";
-      });
+      if (body) {
+        var params = {
+          body: body,
+          user_id: currentUserId,
+          chatroom_id: chatroomId
+        };
+        $http.post("/api/v1/messages.json", params).then(function(response) {
+          $scope.newMessageBody = "";
+        });
+      }
     };
 
     $scope.enterNewMessage = function(e, body, currentUserId, chatroomId) {
