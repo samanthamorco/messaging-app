@@ -5,6 +5,7 @@ class Api::V1::MessagesController < ApplicationController
   end
 
   def create
+    binding.pry
     @message = Message.create(
       body: params[:body],
       user_id: current_user.id
